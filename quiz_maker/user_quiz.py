@@ -11,7 +11,7 @@ from quiz_utils import QuizUtils
 utils = QuizUtils()
 
 # initialize and colorama
-utils.colorama_init
+utils.colorama_init()
 
 # class for quiz questions
 class UseQuestions:
