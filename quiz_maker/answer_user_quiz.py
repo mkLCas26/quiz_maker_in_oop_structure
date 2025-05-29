@@ -3,17 +3,17 @@
 # import libraries
 import os
 import random
-from colorama import Fore, Style, init
-from pyfiglet import Figlet
+from colorama import Fore, Style
 import time
 
-# initialize and colorama and style of figlet
-init(autoreset=True)
-test = Figlet(font='elite')
+from quiz_utils import QuizUtils
 
-# function for clearing screen
-def clear_content():
-    os.system('cls' if os.name == "nt" else "clear")
+# set up instance for QuizUtils
+utils = QuizUtils()
+
+# initialize and colorama and style of figlet
+utils.colorama_init()
+utils.figlet_init()
 
 # function that allows user to choose a quiz file from folder
 def list_avail_quizzes():
@@ -100,21 +100,21 @@ def answer_selected_quiz():
     
     print(f"\nLoading your selected quiz: {Fore.BLUE + quiz_file}")                 # shuffles the 10 quetions of user
     questions = load_selected_quiz(quiz_file)
-    clear_content()
+    utils.clear_content()
     random.shuffle(questions)
       
     score = 0
     quiz_history = []
     correct_letter = ""
     
-    print(Fore.MAGENTA + test.renderText('~ Quiz Master ~') + Style.RESET_ALL)
+    print(Fore.MAGENTA + utils.test.renderText('~ Quiz Master ~') + Style.RESET_ALL)
     
     username = input("\nEnter your username again: ")
     
     for number, item in enumerate(questions, 1):
-        clear_content()
+        utils.clear_content()
         
-        print(Fore.MAGENTA + test.renderText('~ Quiz Master ~') + Style.RESET_ALL)
+        print(Fore.MAGENTA + utils.test.renderText('~ Quiz Master ~') + Style.RESET_ALL)
                                 
         prompt = item[0]                                                # ensures the correct order of prompt, choices, and answer
         choices = item[1]
