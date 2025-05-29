@@ -6,9 +6,9 @@ import time
 from pyfiglet import Figlet
 from colorama import Fore, Back, Style, init
 
-from sample_quiz import run_prequiz, sample_ques
-from user_quiz import input_user_quiz
-from answer_user_quiz import answer_selected_quiz
+from quiz_maker.sample_quiz import run_prequiz, sample_ques
+from quiz_maker.user_quiz import input_user_quiz
+from quiz_maker.answer_user_quiz import answer_selected_quiz
 
 # initialize colorama
 init(autoreset=True)
