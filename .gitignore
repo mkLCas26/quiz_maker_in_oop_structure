@@ -7,4 +7,5 @@ __pycache__/
 myenv/
 
 # ignore result folder to prevent to let gitbash ignore it
-result_folder/
+result_folder/*.txt
+result_folder/\!ReadMe.txt
