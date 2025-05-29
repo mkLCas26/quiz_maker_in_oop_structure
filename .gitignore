@@ -1,0 +1,10 @@
+# ignore cache
+__pycache__/
+*.py [cod]
+*.pyo
+
+# ignore myenv
+myenv/
+
+# ignore result folder to prevent to let gitbash ignore it
+result_folder/
