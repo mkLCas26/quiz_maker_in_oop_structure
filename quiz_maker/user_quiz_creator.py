@@ -32,5 +32,17 @@ class FileOrganizer:
         final_filename = f"{user_filename}{quiz_num}.txt"
         file_path = os.path.join(self.folder, final_filename)   
     
-    
+        with open(file_path, "w") as file:
+            file.write(f"Username: {username}\n")
+            file.write(f"Quiz Number: {quiz_num}")
+            file.write(f"\n---------- {title} Quiz ----------\n")
+        
+            for item in range(10):
+                file.write(f"\nQuestion {item +1}: {user_question[item]}\n")                              # gets the question per index
+                for letter in range(4):
+                    file.write(f"    {chr(65 + letter)}. {choices_list[item * 4 + letter]}\n")            # gets the 4 choices assigned to question
+                file.write(f"Correct Answer: {correct_ans[item]}\n")
+                
+        return file_path
+
     
