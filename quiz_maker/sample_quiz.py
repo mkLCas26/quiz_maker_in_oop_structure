@@ -2,18 +2,17 @@
 
 # import libraries
 import random
-import os
-from colorama import Fore, Style, init
-from pyfiglet import Figlet
+from colorama import Fore, Style
 import time
 
-# initialize and colorama and style of figlet
-init(autoreset=True)
-test = Figlet(font='elite')
+from quiz_utils import QuizUtils
 
-# function for clearing screen
-def clear_content():
-    os.system('cls' if os.name == "nt" else "clear")
+# set up instance for QuizUtils
+utils = QuizUtils()
+
+# initialize and colorama and style of figlet
+utils.colorama_init()
+utils.figlet_init()
 
 # class for quiz questions
 class SampleQuestions:
@@ -111,9 +110,9 @@ def run_prequiz(sample_ques):
     selected_questions = random.sample(sample_ques, 5)            # for random  5 questions/10
  
     for number, item in enumerate(selected_questions, 1):         # for printing questions and choices
-        clear_content()
+        utils.clear_content()
         
-        print(Fore.MAGENTA + test.renderText('~ Quiz Master ~') + Style.RESET_ALL) 
+        print(Fore.MAGENTA + utils.test.renderText('~ Quiz Master ~') + Style.RESET_ALL) 
         
         print(f"\n\n{Fore.BLUE}Question {number}: {item.prompt}")
         for letter, choice in enumerate(item.choices):
