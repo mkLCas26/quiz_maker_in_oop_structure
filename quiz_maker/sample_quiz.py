@@ -1,6 +1,7 @@
 # Main Quiz Logic (for pre-programmed 5 item quiz)
 
 # import libraries
+import os
 import random
 from colorama import Fore, Style
 import time
