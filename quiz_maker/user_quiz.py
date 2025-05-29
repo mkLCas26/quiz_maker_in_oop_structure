@@ -2,11 +2,16 @@
 
 # import libraries
 import os
-from colorama import Fore, Style, init
+from colorama import Fore, Style
 import time
 
-# initialize and colorama and style of figlet
-init(autoreset=True)
+from quiz_utils import QuizUtils
+
+# set up instance for QuizUtils
+utils = QuizUtils()
+
+# initialize and colorama
+utils.colorama_init
 
 # class for quiz questions
 class UseQuestions:
