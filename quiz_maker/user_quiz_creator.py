@@ -20,7 +20,7 @@ class UseQuestions:
         self.choices = choices
         self.correct = correct
         
-# class for filde handling and writing
+# class for file handling and writing
 class FileOrganizer:
     def __init__(self, folder="result_folder"):  
         self.folder = folder
@@ -59,4 +59,8 @@ class FileOrganizer:
         os.system(f'notepad "{file_path}"')
         time.sleep(0.5)
 
+class UserQuizCreator:
+    def __init__(self):
+        self.file_manager = FileOrganizer()
+    
     
