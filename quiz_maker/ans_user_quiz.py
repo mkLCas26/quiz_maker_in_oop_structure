@@ -51,3 +51,41 @@ class AnsUserQuiz:
                 
             except ValueError:
                 print(f"{Fore.RED}Only enter numbers 🔢 . Try Again 🔄️ .")
+
+    def load_selected_quiz(self, quiz_file):
+        with open(quiz_file, "r") as file:                                 
+            lines = file.readlines()
+    
+        questions = []
+        count = 1
+        index = 0
+    
+        while index < len(lines):                                       
+            start_line = lines[index].strip()
+        
+            if start_line.startswith(f"Question {count}: "):                  
+                prompt = start_line[len(f"Question {count}: "):].strip()
+                count += 1
+                index += 1
+            
+                choices = []                                         
+                for _ in range(4):
+                    line = lines[index].strip()
+                
+                    if "." in line:
+                        choices.append(line.split('.', 1)[1].strip())
+                    else:
+                        choices.append(line)
+                    index += 1
+                               
+                if lines[index].startswith("Correct Answer: "):
+                    correct_answer = lines[index].strip()[len("Correct Answer: "):].strip()
+                    correct = ord(correct_answer.upper()) - 65
+                index += 1
+            
+                questions.append((prompt, choices, correct))            
+        
+            else:
+                index += 1
+        return questions
+
