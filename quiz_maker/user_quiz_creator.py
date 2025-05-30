@@ -108,3 +108,7 @@ class UserQuizCreator:
         
             else:
                 print(f"{Fore.RED}Invalid. Enter 'Y' for Yes and 'N' for No. Try Again!")
+
+if __name__ == "__main__":
+    quiz_creator = UserQuizCreator()
+    quiz_creator.input_user_quiz()
