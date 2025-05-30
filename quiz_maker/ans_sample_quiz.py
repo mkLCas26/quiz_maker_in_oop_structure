@@ -70,6 +70,35 @@ class FileOrganizer:
 
         print(f"\n{Fore.CYAN}Your quiz history is now accessible in the result_folder with the filename {Fore.WHITE + final_filename} 📁.")
 
+class AnsSampleQuiz:
+    def __init__(self, questions):
+        self.questions = questions
+        self.file_manager = FileOrganizer()
+        
+    def run_sample(self):
+        username = input("Enter your username again: ")
+        result = QuizHistory(username)
+        selected = random.sample(self.questions, 5)
+
+        for number, item in enumerate(selected, 1):
+            utils.clear_content()
+            print(Fore.MAGENTA + utils.test.renderText('~ Quiz Master ~') + Style.RESET_ALL)
+            print(f"\n\n{Fore.BLUE}Question {number}: {item.prompt}")
+            for i, choice in enumerate(item.choices):
+                print(f"{chr(65 + i)}. {choice}")
+
+            user_answer = input(f"{Fore.CYAN}\nAnswer (A-D): ").upper()
+            correct, correct_choice = result.record(item.prompt, user_answer, item.correct_index, item.choices)
+            if correct:
+                print(f"{Fore.GREEN}Correct! ✅\n")
+            else:
+                print(f"{Fore.RED}Incorrect ❌ . {Fore.WHITE}The correct answer is {Fore.GREEN + correct_choice}\n")
+            time.sleep(1)
+
+        print("--------------------")
+        print(f"{Fore.YELLOW}Congratulations 🎉! You scored {Fore.GREEN}{result.score}{Fore.YELLOW} out of {Fore.GREEN}5.")
+        self.file_manager.save_quiz_result(result)
+
 
 # list of question prompts
 question_prompts = [
