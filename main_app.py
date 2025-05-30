@@ -62,7 +62,7 @@ class MainQuizApp:
     def answer_sample_quiz(self):
         utils.clear_content()
         self.quiz_title(Fore.CYAN)
-        sample = AnsSampleQuiz()
+        sample = AnsSampleQuiz(sample_ques)
         sample.run_sample()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
         utils.clear_content()
