@@ -5,7 +5,7 @@ import os
 from colorama import Fore, Style
 import time
 
-from quiz_utils import QuizUtils
+from quiz_maker.quiz_utils import QuizUtils
 
 # set up instance for QuizUtils
 utils = QuizUtils()
