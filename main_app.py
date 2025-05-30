@@ -11,27 +11,25 @@ from quiz_maker.ans_sample_quiz import run_prequiz, sample_ques
 from quiz_maker.ans_user_quiz import input_user_quiz
 from quiz_maker.user_quiz_creator import answer_selected_quiz
 
-# initialize colorama
-init(autoreset=True)
+# set up instance for QuizUtils
+utils = QuizUtils()
 
-# function for clearing screen 
-def clear_content():
-    os.system('cls' if os.name == "nt" else "clear")
+# initialize colorama
+utils.colorama_init
 
 # Inserts ASCII art for title
-test = Figlet(font='elite')
-clear_content() 
-print(Fore.YELLOW + test.renderText('~ Quiz Master ~'))
+utils.figlet_init()
+utils.clear_content()
+print(Fore.YELLOW + utils.test.renderText('~ Quiz Master ~'))
 time.sleep(1)
 
 # enter username
-username = input("\n\nHi! Enter your username 👾 : ")
-clear_content()
+utils.clear_content()
 
 # Loop for the controls
 while True: 
-    clear_content()
-    print(Fore.YELLOW + test.renderText('~ Quiz Master ~'))
+    utils.clear_content()
+    print(Fore.YELLOW + utils.test.renderText('~ Quiz Master ~'))
     print(f"\n\n{Fore.WHITE}Welcome to Quiz Master ✨, {Fore.GREEN + username}{Fore.WHITE}! Let's get started 🔥")
     print(f"\n{Fore.YELLOW}What would you like to do? 🤸")
     print(f"{Fore.CYAN}   [1] 📝 Create Quiz (10 Questions)")
@@ -42,25 +40,25 @@ while True:
     selected = input(f"{Fore.GREEN}Select an option (1-4): ")
     
     if selected == "1":
-        clear_content()
-        print(Fore.CYAN + test.renderText('~ Quiz Master ~'))
+        utils.clear_content()
+        print(Fore.CYAN + utils.test.renderText('~ Quiz Master ~'))
         input_user_quiz()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
-        clear_content()
+        utils.clear_content()
     
     elif selected == "2":
-        clear_content()
-        print(Fore.CYAN + test.renderText('~ Quiz Master ~'))
+        utils.clear_content()
+        print(Fore.CYAN + utils.test.renderText('~ Quiz Master ~'))
         run_prequiz(sample_ques)
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
-        clear_content()
+        utils.clear_content()
         
     elif selected == "3":
-        clear_content()
-        print(Fore.CYAN + test.renderText('~ Quiz Master ~'))
+        utils.clear_content()
+        print(Fore.CYAN + utils.test.renderText('~ Quiz Master ~'))
         answer_selected_quiz()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
-        clear_content()
+        utils.clear_content()
     
     elif selected == "4":
         print(f"\n\n{Fore.YELLOW}Aww! Thank you for playing, see you soon {Fore.GREEN + username}!")
@@ -69,4 +67,4 @@ while True:
     else:
         print(f"{Fore.RED}Invalid! Only select from 1-4. Kindly try again.")
         time.sleep(0.5)
-        clear_content()
+        utils.clear_content()
