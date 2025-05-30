@@ -170,3 +170,6 @@ class AnsUserQuiz:
                 file.write(f"\nCorrect answer: {entry['correct_choice']}")
         print(f"\n{Fore.CYAN}Your quiz history is now accesible in the result_folder with the filename {Fore.WHITE + final_filename} 📁.")
         
+if __name__ == "__main__":
+    quiz = AnsUserQuiz()
+    quiz.answer_selected_quiz()
