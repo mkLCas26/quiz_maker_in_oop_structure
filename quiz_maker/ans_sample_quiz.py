@@ -178,3 +178,7 @@ sample_ques = [
     )
 ]
 
+if __name__ == "__main__":
+    quiz = AnsSampleQuiz(SampleQuestions)
+    quiz.run_sample()
+    
