@@ -37,6 +37,44 @@ class MainQuizApp:
         self.username = input("\n\nHi! Enter your username 👾 : ")
         utils.clear_content()
         
+    def main_menu(self):
+        while True:
+            utils.clear_content()
+            self.quiz_title()
+            print(f"\n\n{Fore.WHITE}Welcome to Quiz Master ✨, {Fore.GREEN + self.username}{Fore.WHITE}! Let's get started 🔥")
+            print(f"\n{Fore.YELLOW}What would you like to do? 🤸")
+            print(f"{Fore.CYAN}   [1] 📝 Create Quiz (10 Questions)")
+            print(f"{Fore.CYAN}   [2] 🧩 Take Sample Quiz (Random 5 Items Science Quiz)")
+            print(f"{Fore.CYAN}   [3] 🏅 Answer Your Created Quiz")
+            print(f"{Fore.RED}   [4] 😭 Exit")
+            
+            selected = input(f"{Fore.GREEN}Select an option (1-4): ")
+            self.user_select(selected)
+    
+    def create_user_quiz(self):
+        utils.clear_content()
+        self.quiz_title(Fore.CYAN)
+        input_user_quiz()
+        input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
+        utils.clear_content()
+        
+    def answer_sample_quiz(self):
+        utils.clear_content()
+        self.quiz_title(Fore.CYAN)
+        run_prequiz(sample_ques)
+        input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
+        utils.clear_content()
+        
+    def answer_user_quiz(self):
+        utils.clear_content()
+        self.quiz_title(Fore.CYAN)
+        answer_selected_quiz()
+        input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
+        utils.clear_content()
+    
+    def 
+            
+        
 # Loop for the controls
 while True: 
     utils.clear_content()
