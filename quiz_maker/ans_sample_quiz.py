@@ -88,7 +88,7 @@ class AnsSampleQuiz:
                 print(f"{chr(65 + i)}. {choice}")
 
             user_answer = input(f"{Fore.CYAN}\nAnswer (A-D): ").upper()
-            correct, correct_choice = result.record(item.prompt, user_answer, item.correct_index, item.choices)
+            correct, correct_choice = result.result(item.prompt, user_answer, item.correct, item.choices)
             if correct:
                 print(f"{Fore.GREEN}Correct! ✅\n")
             else:
@@ -97,7 +97,7 @@ class AnsSampleQuiz:
 
         print("--------------------")
         print(f"{Fore.YELLOW}Congratulations 🎉! You scored {Fore.GREEN}{result.score}{Fore.YELLOW} out of {Fore.GREEN}5.")
-        self.file_manager.save_quiz_result(result)
+        self.file_manager.write_quiz_result(result)
 
 
 # list of question prompts
@@ -179,6 +179,6 @@ sample_ques = [
 ]
 
 if __name__ == "__main__":
-    quiz = AnsSampleQuiz(SampleQuestions)
+    quiz = AnsSampleQuiz(sample_ques)
     quiz.run_sample()
     
