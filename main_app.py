@@ -91,3 +91,6 @@ class MainQuizApp:
             utils.clear_content()
             self.main_menu()
             
+if __name__ == "__main__":
+    app = MainQuizApp()
+    app.run_menu()
