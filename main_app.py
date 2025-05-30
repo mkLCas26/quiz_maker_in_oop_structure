@@ -54,7 +54,7 @@ class MainQuizApp:
     def create_user_quiz(self):
         utils.clear_content()
         self.quiz_title(Fore.CYAN)
-        create = UserQuizCreator
+        create = UserQuizCreator()
         create.input_user_quiz()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
         utils.clear_content()
@@ -62,7 +62,7 @@ class MainQuizApp:
     def answer_sample_quiz(self):
         utils.clear_content()
         self.quiz_title(Fore.CYAN)
-        sample = AnsSampleQuiz
+        sample = AnsSampleQuiz()
         sample.run_sample()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
         utils.clear_content()

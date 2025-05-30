@@ -92,7 +92,7 @@ class UserQuizCreator:
                     break
         
         quiz_num = self.file_manager.quiz_count_number(title)
-        file_path = self.file_manager.write_user_quiz(self, username, title, user_question, choices_list, correct_ans, quiz_num)
+        file_path = self.file_manager.write_user_quiz(username, title, user_question, choices_list, correct_ans, quiz_num)
         
         while True:
             edit_notice = input("\nDo you wish to edit this file right now 💭 ? [Y/N]: ").upper().strip()
