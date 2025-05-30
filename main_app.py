@@ -72,7 +72,26 @@ class MainQuizApp:
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
         utils.clear_content()
     
-    def 
+    def user_select(self, option):
+        if option == "1":
+            self.create_user_quiz()
+        elif option == "2":
+            self.answer_sample_quiz()
+        elif option == "3":
+            self.answer_user_quiz()
+        elif option == "4":
+            print(f"\n\n{Fore.YELLOW}Aww! Thank you for playing, see you soon {Fore.GREEN + self.username}!")
+            exit()
+        else:
+            print(f"{Fore.RED}Invalid! Only select from 1-4. Kindly try again.")
+            time.sleep(1)
+    
+    def run_menu(self):
+        while True:
+            utils.clear_content()
+            self.main_menu()
+            
+            
             
         
 # Loop for the controls
