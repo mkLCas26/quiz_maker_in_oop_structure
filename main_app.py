@@ -7,9 +7,9 @@ from pyfiglet import Figlet
 from colorama import Fore, Back, Style, init
 
 from quiz_maker.quiz_utils import QuizUtils
-from quiz_maker.ans_sample_quiz import run_prequiz, sample_ques
-from quiz_maker.ans_user_quiz import input_user_quiz
-from quiz_maker.user_quiz_creator import answer_selected_quiz
+from quiz_maker.ans_sample_quiz import AnsSampleQuiz, sample_ques
+from quiz_maker.user_quiz_creator import UserQuizCreator
+from quiz_maker.ans_user_quiz import AnsUserQuiz
 
 # set up instance for QuizUtils
 utils = QuizUtils()
@@ -27,9 +27,9 @@ class MainQuizApp:
     def __init__(self):
         self.username = ""
     
-    def quiz_title(self):
+    def quiz_title(self, color=Fore.YELLOW):
         utils.clear_content()
-        print(Fore.YELLOW + self.utils.test.renderText('~ Quiz Master ~'))
+        print(color + utils.test.renderText('~ Quiz Master ~'))
     
     def get_username(self):
         utils.clear_content()
@@ -54,21 +54,24 @@ class MainQuizApp:
     def create_user_quiz(self):
         utils.clear_content()
         self.quiz_title(Fore.CYAN)
-        input_user_quiz()
+        create = UserQuizCreator
+        create.input_user_quiz()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
         utils.clear_content()
         
     def answer_sample_quiz(self):
         utils.clear_content()
         self.quiz_title(Fore.CYAN)
-        run_prequiz(sample_ques)
+        sample = AnsSampleQuiz
+        sample.run_sample()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
         utils.clear_content()
         
     def answer_user_quiz(self):
         utils.clear_content()
         self.quiz_title(Fore.CYAN)
-        answer_selected_quiz()
+        quiz = AnsUserQuiz()
+        quiz.answer_selected_quiz()
         input(f"\n\n{Back.CYAN + Style.DIM}Press Enter to return to Main Menu 🤸 ...{Style.RESET_ALL}")
         utils.clear_content()
     
@@ -87,6 +90,7 @@ class MainQuizApp:
             time.sleep(1)
     
     def run_menu(self):
+        self.get_username()
         while True:
             utils.clear_content()
             self.main_menu()
