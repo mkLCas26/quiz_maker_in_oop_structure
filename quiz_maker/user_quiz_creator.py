@@ -38,11 +38,25 @@ class FileOrganizer:
             file.write(f"\n---------- {title} Quiz ----------\n")
         
             for item in range(10):
-                file.write(f"\nQuestion {item +1}: {user_question[item]}\n")                              # gets the question per index
+                file.write(f"\nQuestion {item +1}: {user_question[item]}\n")                              
                 for letter in range(4):
-                    file.write(f"    {chr(65 + letter)}. {choices_list[item * 4 + letter]}\n")            # gets the 4 choices assigned to question
-                file.write(f"Correct Answer: {correct_ans[item]}\n")
+                    file.write(f"    {chr(65 + letter)}. {choices_list[item * 4 + letter]}\n")           
                 
         return file_path
+    
+    def quiz_count_number(self, title):
+        format_title = title.replace(" ", "_").lower()       
+        user_filename = f"{format_title}_quiz"
+        count_files = os.listdir(self.folder)
+    
+        quiz_num = 1
+        while (f"{user_filename}{quiz_num}.txt") in count_files:    
+            quiz_num += 1
+        
+        return quiz_num
+    
+    def open_file_in_notepad(seld, file_path):
+        os.system(f'notepad "{file_path}"')
+        time.sleep(0.5)
 
     
