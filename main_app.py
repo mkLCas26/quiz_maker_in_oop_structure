@@ -23,9 +23,20 @@ utils.clear_content()
 print(Fore.YELLOW + utils.test.renderText('~ Quiz Master ~'))
 time.sleep(1)
 
-# enter username
-utils.clear_content()
-
+class MainQuizApp:
+    def __init__(self):
+        self.username = ""
+    
+    def quiz_title(self):
+        utils.clear_content()
+        print(Fore.YELLOW + self.utils.test.renderText('~ Quiz Master ~'))
+    
+    def get_username(self):
+        utils.clear_content()
+        self.quiz_title()
+        self.username = input("\n\nHi! Enter your username 👾 : ")
+        utils.clear_content()
+        
 # Loop for the controls
 while True: 
     utils.clear_content()
