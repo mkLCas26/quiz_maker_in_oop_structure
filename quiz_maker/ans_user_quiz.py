@@ -20,7 +20,7 @@ class AnsUserQuiz:
         self.folder_name = folder_name
         os.makedirs(folder_name, exist_ok=True)
         
-    def list_avail_quizzes():
+    def list_avail_quizzes(self):
         quizzes = []
     
         for file in os.listdir("result_folder"):
