@@ -14,12 +14,6 @@ utils = LibraryHelpers()
 # initialize and colorama
 utils.colorama_init()
 
-# class for quiz questions
-class UseQuestions:
-    def __init__(self, prompt, choices, correct):
-        self.prompt = prompt
-        self.choices = choices
-        self.correct = correct
         
 class UserQuizCreator:
     def __init__(self):
