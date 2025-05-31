@@ -7,6 +7,7 @@ from colorama import Fore, Style
 import time
 
 from quiz_utilities.library_helpers import LibraryHelpers
+from quiz_utilities.sample_quiz_helpers import SampleQuestions
 from file_organizer.quiz_history_organizer import QuizHistoryOrganizer
 
 # set up instance for LibraryHelpers
@@ -15,12 +16,6 @@ utils = LibraryHelpers()
 # initialize and colorama and style of figlet
 utils.colorama_init()
 utils.figlet_init()
-
-class SampleQuestions:
-    def __init__(self, prompt, choices, correct):
-        self.prompt = prompt
-        self.choices = choices
-        self.correct = correct
         
 class QuizHistory:
     def __init__(self, username):
