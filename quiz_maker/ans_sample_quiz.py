@@ -49,7 +49,7 @@ class QuizHistory:
 class AnsSampleQuiz:
     def __init__(self, questions):
         self.questions = questions
-        self.file_manager = QuizHistoryOrganizer
+        self.file_manager = QuizHistoryOrganizer()
         
     def run_sample(self):
         username = input("Enter your username again: ")
