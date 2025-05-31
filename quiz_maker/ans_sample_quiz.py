@@ -7,7 +7,7 @@ from colorama import Fore, Style
 import time
 
 from quiz_utilities.library_helpers import LibraryHelpers
-from quiz_utilities.sample_quiz_helpers import SampleQuestions
+from quiz_utilities.sample_quiz_helpers import SampleQuizHelpers
 from quiz_utilities.quiz_history_helpers import QuizHistoryHelpers
 from file_organizer.quiz_history_organizer import QuizHistoryOrganizer
 
@@ -64,61 +64,61 @@ question_prompts = [
 
 # list of questions with choices and correct answer index
 sample_ques = [
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[0],
         ["Pacific Ocean", "Indian Ocean", "Arctic Ocean", "Atlantic Ocean"],
         0
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[1],
         ["Kermadec Trench", "Tonga Trench", "Marianas Trench", "New Britain Trench"],
         2
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[2],
         ["Saturn", "Neptune", "Uranus", "Jupiter"],
         3
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[3],
         ["70%", "71%", "68%", "73%"],
         1
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[4],
         ["Nitrogen", "Argon", "Carbon Dioxide", "Oxygen"],
         3
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[5],
         ["Kangchenjunga", "Mount Ararat", "K2", "Mount Everest"],
         3
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[6],
         ["About 4.54 billion years", "About 5 billion years", "About 4.6 billion years", "About 8.1 billion years"],
         0
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[7],
         ["South American Plate", "North American Plate", "Pacific Plate", "African Plate"],
         2
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[8],
         ["Earth", "Saturn", "Jupiter", "Uranus"],
         1
     ),
     
-    SampleQuestions(
+    SampleQuizHelpers(
         question_prompts[9],
         ["Shell, Mantle, First Core, Second Core", "Crust, Mantle, Outer Core, Inner Core",
          "Cover, Mantle, Inner Core, Outer Core", "Crust, Second Layer, Contents, Specifics"],
