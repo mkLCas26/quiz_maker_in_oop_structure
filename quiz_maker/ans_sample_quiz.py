@@ -7,6 +7,7 @@ from colorama import Fore, Style
 import time
 
 from quiz_maker.quiz_utils import QuizUtils
+from file_organizer.quiz_history_organizer import QuizHistoryOrganizer
 
 # set up instance for QuizUtils
 utils = QuizUtils()
@@ -48,7 +49,7 @@ class QuizHistory:
 class AnsSampleQuiz:
     def __init__(self, questions):
         self.questions = questions
-        self.file_manager = FileOrganizer()
+        self.file_manager = QuizHistoryOrganizer
         
     def run_sample(self):
         username = input("Enter your username again: ")
