@@ -6,13 +6,13 @@ import time
 from pyfiglet import Figlet
 from colorama import Fore, Back, Style, init
 
-from quiz_maker.quiz_utils import QuizUtils
+from quiz_utilities.library_helpers import LibraryHelpers
 from quiz_maker.ans_sample_quiz import AnsSampleQuiz, sample_ques
 from quiz_maker.user_quiz_creator import UserQuizCreator
 from quiz_maker.ans_user_quiz import AnsUserQuiz
 
-# set up instance for QuizUtils
-utils = QuizUtils()
+# set up instance for LibraryHelpers
+utils = LibraryHelpers()
 
 # initialize colorama
 utils.colorama_init

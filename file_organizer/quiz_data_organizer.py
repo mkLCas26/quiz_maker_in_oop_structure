@@ -1,10 +1,10 @@
 import os
 import time
 from colorama import Fore
-from quiz_maker.quiz_utils import QuizUtils
+from quiz_utilities.library_helpers import LibraryHelpers
 
-# initialize colorama from quiz utils
-utils = QuizUtils()
+# set up instance for LibraryHelpers
+utils = LibraryHelpers()
 utils.colorama_init()
 
 class QuizDataOrganizer:

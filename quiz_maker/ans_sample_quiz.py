@@ -6,11 +6,11 @@ import random
 from colorama import Fore, Style
 import time
 
-from quiz_maker.quiz_utils import QuizUtils
+from quiz_utilities.library_helpers import LibraryHelpers
 from file_organizer.quiz_history_organizer import QuizHistoryOrganizer
 
-# set up instance for QuizUtils
-utils = QuizUtils()
+# set up instance for LibraryHelpers
+utils = LibraryHelpers()
 
 # initialize and colorama and style of figlet
 utils.colorama_init()

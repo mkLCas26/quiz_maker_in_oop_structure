@@ -1,9 +1,9 @@
 import os
 from colorama import Fore
-from quiz_maker.quiz_utils import QuizUtils
+from quiz_utilities.library_helpers import LibraryHelpers
 
 # initialize colorama from quiz utils
-utils = QuizUtils()
+utils = LibraryHelpers()
 utils.colorama_init()
 
 class QuizHistoryOrganizer:
