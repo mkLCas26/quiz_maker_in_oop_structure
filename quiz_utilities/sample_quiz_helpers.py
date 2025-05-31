@@ -1,4 +1,4 @@
-class SampleQuestions:
+class SampleQuizHelpers:
     def __init__(self, prompt, choices, correct):
         self.prompt = prompt
         self.choices = choices
