@@ -2,7 +2,7 @@ import os
 from colorama import init
 from pyfiglet import Figlet
 
-class QuizUtils:
+class LibraryHelpers:
     def clear_content(self):
         os.system('cls' if os.name == "nt" else "clear")
         
