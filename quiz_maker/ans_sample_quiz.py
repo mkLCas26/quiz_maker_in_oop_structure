@@ -8,6 +8,7 @@ import time
 
 from quiz_utilities.library_helpers import LibraryHelpers
 from quiz_utilities.sample_quiz_helpers import SampleQuestions
+from quiz_utilities.quiz_history_helpers import QuizHistoryHelpers
 from file_organizer.quiz_history_organizer import QuizHistoryOrganizer
 
 # set up instance for LibraryHelpers
@@ -17,30 +18,6 @@ utils = LibraryHelpers()
 utils.colorama_init()
 utils.figlet_init()
         
-class QuizHistory:
-    def __init__(self, username):
-        self.username = username
-        self.score = 0
-        self.history = []
-        
-    def result(self, question, user_answer, correct_index, choices):
-        correct_letter = chr(65 + correct_index)
-        correct_choice = f"{correct_letter}. {choices[correct_index]}"
-        
-        self.history.append({
-            "question": question,
-            "choices": choices,
-            "answer": user_answer,
-            "correct_choice": correct_choice
-        })
-        
-        if user_answer and ord(user_answer[0]) - 65 == correct_index:
-            self.score += 1
-            return True, correct_choice
-        else:
-            return False, correct_choice
-
-
 class AnsSampleQuiz:
     def __init__(self, questions):
         self.questions = questions
@@ -48,7 +25,7 @@ class AnsSampleQuiz:
         
     def run_sample(self):
         username = input("Enter your username again: ")
-        result = QuizHistory(username)
+        result = QuizHistoryHelpers(username)
         selected = random.sample(self.questions, 5)
 
         for number, item in enumerate(selected, 1):
